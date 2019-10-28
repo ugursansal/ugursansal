@@ -1,0 +1,92 @@
+//Collatz Probleminin Fork ile Çözümü
+#include<stdio.h>
+
+#include<unistd.h>
+
+#include<stdlib.h>
+
+#include<sys/wait.h>
+
+
+
+
+int birsayiGir()
+{
+int y;
+printf("pozitif bir sayı giriniz : ");
+scanf("%d",&y);
+return y;
+    
+}
+
+
+int main()
+{
+   int x
+    int sonuc;
+ 
+ unsigned int pid = fork();
+  
+  if(pid)
+{
+   
+ printf("Fork ID : %u\n" ,pid);    
+
+ 
+
+       x=birsayiGir();
+   
+ if(x < 0)
+{
+       
+ printf("Pozitif bir x değeri giriniz..: ");
+ 
+   }
+
+    if(x >= 0)
+{
+        
+       
+ while(true)
+{
+        
+if(x % 2 == 0)
+{
+            
+ x = x/ 2 ;
+  
+ printf("%d\n" ,x);
+    
+if(x == 1)
+{
+                
+ break;
+           
+  }   
+      
+}
+       
+ else
+{
+        
+     x = 3*x + 1;
+       
+      printf("%d\n" ,x); 
+  
+           if(x == 1)
+{
+               
+ break;
+
+   } 
+  
+  }
+     
+   }
+        
+ 
+   }
+
+}
+
+}
